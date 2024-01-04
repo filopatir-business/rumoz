@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link id="theme-link" rel="stylesheet" href="css/hidden.css">
+    <link rel="icon" href="pictures/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="pictures/apple-touch-icon.png">
+</head>
+<body>
+    <header>
+        <h1 class="header-title" id="header_title"></h1>
+        <nav class="nav-main">
+            <div class="left-section">
+                <div class="coins-container">
+                    <img src="pictures/coins_icon.png" alt="Coins Icon" class="coins-icon" id="coins-icon">
+                    <span class="coins-text" id="CoinsText">Coins: --</span>
+                </div>
+                <div class="profile-picture-container">
+                    <a href="profile">
+                      <img src="pictures/profile_pic_unknown.png" alt="Profile Picture" class="profile-picture" id="profile-picture">
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="page-container">
+      <nav class="main-menu nav-sider">
+        <ul>
+          <li>
+            <a href="home">
+              <img id="sidebar_icon_home" src="pictures/icons/home.png" alt="Home" class="nav-icon">
+              <span class="nav-text">
+                Home
+              </span>
+            </a>
+  
+          </li>
+          <li>
+            <a href="search">
+              <img id="sidebar_icon_search" src="pictures/icons/search.png" alt="Search" class="nav-icon">
+              <span class="nav-text">
+                Search
+              </span>
+            </a>
+  
+          </li>
+          <li>
+            <a href="profile">
+              <img id="sidebar_icon_profile" src="pictures/icons/person.png" alt="Profile" class="nav-icon">
+              <span class="nav-text">
+                Profile
+              </span>
+            </a>
+  
+          </li>
+          <li>
+            <a href="settings">
+              <img id="sidebar_icon_settings" src="pictures/icons/settings.png" alt="Settings" class="nav-icon">
+              <span class="nav-text">
+                Settings
+              </span>
+            </a>
+          </li>
+          <hr>
+          <li>
+            <a href="notifications">
+              <img id="sidebar_icon_notifications" src="pictures/icons/notifications.png" alt="Notifications" class="nav-icon">
+              <span id="notification_dotS" class="notification-dot hidden"></span>
+              <span class="nav-text">
+                Notifications
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="activities">
+              <img id="sidebar_icon_activities" src="pictures/icons/activities.png" alt="Activities" class="nav-icon">
+              <span class="nav-text">
+                Activities
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="news">
+              <img id="sidebar_icon_news" src="pictures/icons/news.png" alt="News" class="nav-icon">
+              <span class="nav-text">
+                News
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="events">
+              <img id="sidebar_icon_events" src="pictures/icons/events.png" alt="Events" class="nav-icon">
+              <span class="nav-text">
+                Events
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="store">
+              <img id="sidebar_icon_store" src="pictures/icons/store.png" alt="Store" class="nav-icon">
+              <span class="nav-text">
+                Store
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="wallet">
+              <img id="sidebar_icon_wallet" src="pictures/icons/wallet.png" alt="Wallet" class="nav-icon">
+              <span class="nav-text">
+                Wallet
+              </span>
+            </a>
+          </li>
+          <hr>
+          <li>
+            <a href="https://support.mfcweb.repl.co">
+              <img id="sidebar_icon_support" src="pictures/icons/support.png" alt="Support" class="nav-icon">
+              <span class="nav-text">
+                Support
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick="signOut()">
+              <img id="sidebar_icon_signout" src="pictures/icons/signout.png" alt="Support" class="nav-icon">
+              <span class="nav-text">
+                Sign out
+              </span>
+            </a>
+          </li>
+          <div class="sidebarLittleSize">
+            <hr>
+            <li>
+              <a onclick="sidebarLittleSize()">
+                <img id="sidebar_icon_close" src="pictures/icons/close.png" alt="Close" class="nav-icon">
+                <span class="nav-text">
+                  Close menu
+                </span>
+              </a>
+            </li>
+          </div>
+        </ul>
+      </nav>
+      <main>
+          <div class="form-container">
+            <div class="form">
+              <div class="titlesearch">
+                  <h1>Search</h1>
+                  <br>
+                  <form id="searchForm" class="searchBarForm">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                    <button type="button" onclick="search()">
+                      <img src=pictures/icons/search.png alt="Search" class="searchBarIcon" id="searchBarIcon">
+                    </button>
+                  </form>
+              </div>
+              <div id="searchResults" class="searchResultsMenu">
+              </div>
+            </div>
+          </div>
+      </main>
+      <nav class="mobile-bottom-nav">
+        <li>
+          <a onclick="sidebarLittleSize()">
+            <img id="mobilebar_icon_menu" src="pictures/icons/menu.png" alt="Menu" class="nav-icon">
+          </a>
+
+        </li>
+        <li>
+          <a href="notifications">
+            <img id="mobilebar_icon_notifications" src="pictures/icons/notifications.png" alt="Notifications" class="nav-icon">
+            <span id="notification_dotM" class="notification-dot hidden"></span>
+          </a>
+        </li>
+        <li>
+          <a href="search">
+            <img id="mobilebar_icon_search" src="pictures/icons/search.png" alt="Search" class="nav-icon">
+          </a>
+
+        </li>
+        <li>
+          <a href="home">
+            <img id="mobilebar_icon_home" src="pictures/icons/home.png" alt="Home" class="nav-icon">
+          </a>
+          </a>
+        </li>
+      </nav>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/signedin_pages.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

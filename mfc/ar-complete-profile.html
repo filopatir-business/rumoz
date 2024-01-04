@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أكمل ملفك الشخصي</title>
+  <link id="theme-link" rel="stylesheet" href="css/ar-signin.css">
+  <link rel="icon" href="pictures/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="pictures/apple-touch-icon.png">
+</head>
+
+<body>
+  <header>
+    <h1>أكمل ملفك الشخصي</h1>
+  </header>
+
+  <main>
+    <div class="scroll-form">
+      <div id="signup-form" class="form complete-P-form">
+        <span id="your_email" class="your-email"></span>
+        <div id="profile-pic-container" class="signup-profile-pic-container">
+          <label for="profile-pic-input">
+            <img id="profile-pic" src="pictures/profile_pic_unknown.png" alt="صورة الملف الشخصي">
+          </label>
+          <input type="file" id="profile-pic-input" accept="image/*" onchange="handleProfilePicChange()">
+        </div>
+        <div>
+          <a onclick="handleProfilePicRemove()" id="remove-picture"></a>
+        </div>
+        <div class="signup-form-line">
+          <label for="signup-name" id="name-label">الاسم</label>
+          <input type="text" id="signup-name" placeholder="الاسم">
+        </div>
+        <div class="signup-form-line">
+          <label for="signup-username" id="username-label">إسم المستخدم</label>
+          <div class="input-container account-form-line-u">
+            <span class="at-symbol">@</span>
+            <input type="text" id="new_username" placeholder="إسم المستخدم" >
+          </div>
+          <div class="user-errors">
+            <p id="change_username_error_message" class="signup-error-message"></p>
+            <p id="change_username_done_message" class="signup-done-message"></p>
+          </div>
+        </div>
+        <div class="signup-form-line">
+          <label for="signup-gender" id="gender-label">النوع</label>
+          <select id="signup-gender">
+            <option value="click_to_choose">انقر للاختيار</option>
+            <option value="male">ذكر</option>
+            <option value="female">أنثى</option>
+          </select>
+        </div>
+        <div class="signup-form-line">
+          <label for="signup-birthday" id="birthday-label">تاريخ الميلاد</label>
+          <input type="date" id="signup-birthday">
+        </div>
+        <div class="signup-form-line">
+          <label for="signup-position" id="position-label">هل أنت...؟</label>
+          <select id="signup-position">
+            <option value="click_to_choose">انقر للاختيار</option>
+            <option value="0">مخدوم</option>
+            <option value="1">خادم</option>
+          </select>
+        </div>
+        <p id="signup-error-message" class="signup-error-message"></p>
+        <button id="google-signup-button" onclick="completeProfileSignUp()">أكمل عملية التسجيل</button>
+        <div class="signup-link">
+          هل ترغب في تغيير الحساب؟ <a href="#" onclick="signOut()" class="signin-link">تسجيل الخروج</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <input type="hidden" id="google-signup-email" name="google-signup-email" value="">
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/complete-profile-validation.js"></script>
+  <script src="js/ar-complete-profile.js"></script>
+</body>
+</html>

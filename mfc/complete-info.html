@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Your Profile</title>
+  <link id="theme-link" rel="stylesheet" href="css/signin.css">
+  <link rel="icon" href="pictures/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="pictures/apple-touch-icon.png">
+</head>
+
+<body>
+  <header>
+    <h1>Complete Your Profile</h1>
+  </header>
+
+  <main>
+    <div class="scroll-form">
+      <div id="signup-form" class="form complete-P-form" style="display: none;">
+        <span id="your_email" class="your-email"></span>
+
+        <div class="row">
+          <div class="signup-form-line ar-en-row-title" dir="ltr">
+            <label class="lang-sing">English</label>
+          </div>
+          <div class="signup-form-line" dir="rtl">
+            <label class="lang-sing-ar">عربي</label>
+          </div>
+        </div>
+        
+        <div class="row first-name">
+          <div class="signup-form-line ar-en-row" dir="ltr">
+            <label for="signup-first-name" id="first-name-label" class="ar-en-label">First name</label>
+            <input type="text" id="signup-first-name" placeholder="First name">
+          </div>
+          <div class="signup-form-line" dir="rtl">
+            <label for="signup-first-name-ar" id="first-name-label-ar">الاسم الأول</label>
+            <input type="text" id="signup-first-name-ar" placeholder="الاسم الأول">
+            </div>
+        </div>
+        <div class="row second-name">
+          <div class="signup-form-line ar-en-row" dir="ltr">
+          <label for="signup-second-name" id="second-name-label" class="ar-en-label">Middle name</label>
+          <input type="text" id="signup-second-name" placeholder="Middle name">
+        </div>
+          <div class="signup-form-line" dir="rtl">
+          <label for="signup-second-name-ar" id="second-name-label-ar">الاسم الأوسط</label>
+          <input type="text" id="signup-second-name-ar" placeholder="الاسم الأوسط">
+          </div>
+        </div>
+        <div class="row last-name">
+          <div class="signup-form-line ar-en-row" dir="ltr">
+          <label for="signup-last-name" id="last-name-label" class="ar-en-label">Last name</label>
+          <input type="text" id="signup-last-name" placeholder="Last name">
+        </div>
+          <div class="signup-form-line" dir="rtl">
+            <label for="signup-last-name-ar" id="last-name-label-ar">الاسم الاخير</label>
+            <input type="text" id="signup-last-name-ar" placeholder="الاسم الأخير">
+          </div>
+        </div>
+
+        <div class="row school-name">
+          <div class="signup-form-line  ar-en-row" dir="ltr">
+            <label for="signup-school" id="school-label" class="ar-en-label">School name</label>
+            <input type="text" id="signup-school" placeholder="School name">
+          </div>
+          <div class="signup-form-line " dir="rtl">
+            <label for="signup-school-ar" id="school-label-ar">اسم المدرسة</label>
+            <input type="text" id="signup-school-ar" placeholder="اسم المدرسة">
+          </div>
+        </div>
+        
+        <div class="hidden"> <!-- class="signup-form-line" -->
+          <label for="signup-school-section" id="school-section-label">School section</label>
+          <select id="signup-school-section" onchange="updateSelectedSchoolSection()">
+            <option value="P">Primary</option>
+            <option value="M">Preparatory</option>
+            <option value="S">Secondary</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <div class="signup-form-line">
+            <div class="hidden" id="school-primary-year-line">
+              <label for="signup-school-primary-year" id="school-primary-year-label">School Year</label>
+              <select id="signup-school-primary-year">
+                <option value="click_to_choose">Click to Choose</option>
+                <option value="1P">Primary 1</option>
+                <option value="2P">Primary 2</option>
+                <option value="3P">Primary 3</option>
+                <option value="4P">Primary 4</option>
+                <option value="5P">Primary 5</option>
+                <option value="6P">Primary 6</option>
+              </select>
+            </div>
+          </div>
+  
+          <div class="signup-form-line">
+            <div class="" id="school-preparatory-year-line">
+              <label for="signup-school-preparatory-year" id="school-preparatory-year-label">School Year</label>
+              <select id="signup-school-preparatory-year">
+                <option value="click_to_choose">Click to Choose</option>
+                <option value="1M">Preparatory 1</option>
+                <option value="2M">Preparatory 2</option>
+                <option value="3M">Preparatory 3</option>
+              </select>
+            </div>
+          </div>
+  
+          <div class="signup-form-line">
+            <div class="hidden" id="school-secondary-year-line">
+              <label for="signup-school-secondary-year" id="school-secondary-year-label">School Year</label>
+              <select id="signup-school-secondary-year">
+                <option value="click_to_choose">Click to Choose</option>
+                <option value="1S">Secondary 1</option>
+                <option value="2S">Secondary 2</option>
+                <option value="3S">Secondary 3</option>
+              </select>
+            </div>
+          </div>
+          </div>
+
+        <div class="signup-form-line">
+          <label for="signup-phone-number" id="phone-number-label">Phone Number</label>
+          <div class="input-container account-form-line-u">
+            <span id="selected-country" class="country-code-symbole">+20</span>
+            <select id="country-code" class="phone-country-code" onchange="updateSelectedCountry()">
+              <option value="+54">Argentina (+54)</option>
+              <option value="+61">Australia (+61)</option>
+              <option value="+55">Brazil (+55)</option>
+              <option value="+1">Canada (+1)</option>
+              <option value="+86">China (+86)</option>
+              <option value="+20">Egypt (+20)</option>
+              <option value="+33">France (+33)</option>
+              <option value="+49">Germany (+49)</option>
+              <option value="+91">India (+91)</option>
+              <option value="+39">Italy (+39)</option>
+              <option value="+81">Japan (+81)</option>
+              <option value="+52">Mexico (+52)</option>
+              <option value="+7">Russia (+7)</option>
+              <option value="+966">Saudi Arabia (+966)</option>
+              <option value="+27">South Africa (+27)</option>
+              <option value="+34">Spain (+34)</option>
+              <option value="+46">Sweden (+46)</option>
+              <option value="+90">Turkey (+90)</option>
+              <option value="+971">United Arab Emirates (+971)</option>
+              <option value="+44">United Kingdom (+44)</option>971
+              <option value="+1">United States (+1)</option>
+            </select>
+            <input type="number" id="signup-phone-number" placeholder="Phone Number" name="phone" class="phone-input">
+          </div>
+        </div>
+        
+        <div class="signup-form-line">
+          <label for="signup-address" id="address-label">Address</label>
+          <input type="text" id="signup-address" placeholder="Address">
+        </div>
+
+        <div class="signup-form-line">
+          <label for="signup-national-id" id="national-id-label">National ID <label class="optionalIcon">(Optional)</label></label>
+          <input type="number" id="signup-national-id" placeholder="National ID">
+        </div>
+
+        <div class="row">
+          <label class="sing-parents">Parents Info</label>
+        </div>
+
+        <div class="signup-form-line">
+          <label for="signup-parent" id="parent-label">This is...?</label>
+          <select id="signup-parent">
+            <option value="click_to_choose">Click to Choose</option>
+            <option value="1">The father</option>
+            <option value="2">The mother</option>
+            <option value="3">The grandfather</option>
+            <option value="4">The grandmother</option>
+            <option value="5">The uncle</option>
+            <option value="6">The aunt</option>
+            <option value="7">Other</option>
+          </select>
+        </div>
+
+        <div class="signup-form-line">
+          <label for="signup-parent-email" id="parent-email-label">Parent Email</label>
+          <input type="email" id="signup-parent-email" placeholder="Email">
+        </div>
+
+        <div class="signup-form-line">
+          <label for="signup-parent-phone-number" id="parent-phone-number-label">Parent Phone Number</label>
+          <div class="input-container account-form-line-u">
+            <span id="selected-country-parent" class="country-code-symbole">+20</span>
+            <select id="country-code-parent" class="phone-country-code" onchange="updateSelectedCountryParents()">
+              <option value="+54">Argentina (+54)</option>
+              <option value="+61">Australia (+61)</option>
+              <option value="+55">Brazil (+55)</option>
+              <option value="+1">Canada (+1)</option>
+              <option value="+86">China (+86)</option>
+              <option value="+20">Egypt (+20)</option>
+              <option value="+33">France (+33)</option>
+              <option value="+49">Germany (+49)</option>
+              <option value="+91">India (+91)</option>
+              <option value="+39">Italy (+39)</option>
+              <option value="+81">Japan (+81)</option>
+              <option value="+52">Mexico (+52)</option>
+              <option value="+7">Russia (+7)</option>
+              <option value="+966">Saudi Arabia (+966)</option>
+              <option value="+27">South Africa (+27)</option>
+              <option value="+34">Spain (+34)</option>
+              <option value="+46">Sweden (+46)</option>
+              <option value="+90">Turkey (+90)</option>
+              <option value="+971">United Arab Emirates (+971)</option>
+              <option value="+44">United Kingdom (+44)</option>971
+              <option value="+1">United States (+1)</option>
+            </select>
+            <input type="number" id="signup-parent-phone-number" placeholder="Phone Number" name="phone" class="phone-input">
+          </div>
+        </div>
+        
+        <p id="signup-error-message" class="signup-error-message"></p>
+        <button id="google-signup-button" onclick="completeInfoSignUp()">Complete Info</button>
+        <div class="signup-link">
+          Want to change the account? <a href="#" onclick="signOut()" class="signin-link">Sign out</a>
+        </div>
+      </div>
+      <div id="signup-form" class="form complete-P-form-servants" style="display: none;">
+        <span id="your_email_servants" class="your-email"></span>
+
+        <div class="row">
+          <div class="signup-form-line ar-en-row-title" dir="ltr">
+            <label class="lang-sing">English</label>
+          </div>
+          <div class="signup-form-line" dir="rtl">
+            <label class="lang-sing-ar">عربي</label>
+          </div>
+        </div>
+
+        <div class="row first-name">
+          <div class="signup-form-line ar-en-row" dir="ltr">
+            <label for="signup-first-name-servants" id="first-name-label-servants" class="ar-en-label">First name</label>
+            <input type="text" id="signup-first-name-servants" placeholder="First name">
+          </div>
+          <div class="signup-form-line" dir="rtl">
+            <label for="signup-first-name-ar-servants" id="first-name-label-ar-servants">الاسم الأول</label>
+            <input type="text" id="signup-first-name-ar-servants" placeholder="الاسم الأول">
+            </div>
+        </div>
+        <div class="row second-name">
+          <div class="signup-form-line ar-en-row" dir="ltr">
+          <label for="signup-second-name-servants" id="second-name-label-servants" class="ar-en-label">Middle name</label>
+          <input type="text" id="signup-second-name-servants" placeholder="Middle name">
+        </div>
+          <div class="signup-form-line" dir="rtl">
+          <label for="signup-second-name-ar-servants" id="second-name-label-ar-servants">الاسم الأوسط</label>
+          <input type="text" id="signup-second-name-ar-servants" placeholder="الاسم الأوسط">
+          </div>
+        </div>
+        <div class="row last-name">
+          <div class="signup-form-line ar-en-row" dir="ltr">
+          <label for="signup-last-name-servants" id="last-name-label-servants" class="ar-en-label">Last name</label>
+          <input type="text" id="signup-last-name-servants" placeholder="Last name">
+        </div>
+          <div class="signup-form-line" dir="rtl">
+            <label for="signup-last-name-ar-servants" id="last-name-label-ar-servants">الاسم الاخير</label>
+            <input type="text" id="signup-last-name-ar-servants" placeholder="الاسم الأخير">
+          </div>
+        </div>
+        
+        <div class="signup-form-line">
+          <label for="signup-phone-number-servants" id="phone-number-label-servants">Phone Number</label>
+          <div class="input-container account-form-line-u">
+            <span id="selected-country-servants" class="country-code-symbole">+20</span>
+            <select id="country-code-servants" class="phone-country-code" onchange="updateSelectedCountryServants()">
+              <option value="+54">Argentina (+54)</option>
+              <option value="+61">Australia (+61)</option>
+              <option value="+55">Brazil (+55)</option>
+              <option value="+1">Canada (+1)</option>
+              <option value="+86">China (+86)</option>
+              <option value="+20">Egypt (+20)</option>
+              <option value="+33">France (+33)</option>
+              <option value="+49">Germany (+49)</option>
+              <option value="+91">India (+91)</option>
+              <option value="+39">Italy (+39)</option>
+              <option value="+81">Japan (+81)</option>
+              <option value="+52">Mexico (+52)</option>
+              <option value="+7">Russia (+7)</option>
+              <option value="+966">Saudi Arabia (+966)</option>
+              <option value="+27">South Africa (+27)</option>
+              <option value="+34">Spain (+34)</option>
+              <option value="+46">Sweden (+46)</option>
+              <option value="+90">Turkey (+90)</option>
+              <option value="+971">United Arab Emirates (+971)</option>
+              <option value="+44">United Kingdom (+44)</option>971
+              <option value="+1">United States (+1)</option>
+            </select>
+            <input type="number" id="signup-phone-number-servants" placeholder="Phone Number" name="phone" class="phone-input">
+          </div>
+        </div>
+
+        <div class="signup-form-line">
+          <label for="signup-address-servants" id="address-label-servants">Address</label>
+          <input type="text" id="signup-address-servants" placeholder="Address">
+        </div>
+
+        <div class="signup-form-line">
+          <label for="signup-national-id-servants" id="national-id-label-servants">National ID <label class="optionalIcon">(Optional)</label></label>
+          <input type="number" id="signup-national-id-servants" placeholder="National ID">
+        </div>
+
+        <p id="signup-error-message-servants" class="signup-error-message"></p>
+        <button id="google-signup-button-servants" onclick="completeInfoSignUpServants()">Complete Info</button>
+        <div class="signup-link">
+          Want to change the account? <a href="#" onclick="signOut()" class="signin-link">Sign out</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/complete-info-validation.js"></script>
+  <script src="js/complete-info.js"></script>
+</body>
+</html>

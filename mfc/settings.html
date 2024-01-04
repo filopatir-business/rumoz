@@ -1,0 +1,409 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link id="theme-link" rel="stylesheet" href="css/hidden.css">
+    <link rel="icon" href="pictures/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="pictures/apple-touch-icon.png">
+</head>
+<body>
+    <header>
+        <h1 class="header-title" id="header_title"></h1>
+        <nav class="nav-main">
+            <div class="left-section">
+                <div class="coins-container">
+                    <img src="pictures/coins_icon.png" alt="Coins Icon" class="coins-icon" id="coins-icon">
+                    <span class="coins-text" id="CoinsText">Coins: --</span>
+                </div>
+                <div class="profile-picture-container">
+                    <a href="profile">
+                      <img src="pictures/profile_pic_unknown.png" alt="Profile Picture" class="profile-picture" id="profile-picture">
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="page-container">
+      <nav class="main-menu nav-sider">
+        <ul>
+          <li>
+            <a href="home">
+              <img id="sidebar_icon_home" src="pictures/icons/home.png" alt="Home" class="nav-icon">
+              <span class="nav-text">
+                Home
+              </span>
+            </a>
+
+          </li>
+          <li>
+            <a href="search">
+              <img id="sidebar_icon_search" src="pictures/icons/search.png" alt="Search" class="nav-icon">
+              <span class="nav-text">
+                Search
+              </span>
+            </a>
+
+          </li>
+          <li>
+            <a href="profile">
+              <img id="sidebar_icon_profile" src="pictures/icons/person.png" alt="Profile" class="nav-icon">
+              <span class="nav-text">
+                Profile
+              </span>
+            </a>
+
+          </li>
+          <li>
+            <a href="settings">
+              <img id="sidebar_icon_settings" src="pictures/icons/settings.png" alt="Settings" class="nav-icon">
+              <span class="nav-text">
+                Settings
+              </span>
+            </a>
+
+          </li>
+          <hr>
+          <li>
+            <a href="notifications">
+              <img id="sidebar_icon_notifications" src="pictures/icons/notifications.png" alt="Notifications" class="nav-icon">
+              <span id="notification_dotS" class="notification-dot hidden"></span>
+              <span class="nav-text">
+                Notifications
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="activities">
+              <img id="sidebar_icon_activities" src="pictures/icons/activities.png" alt="Activities" class="nav-icon">
+              <span class="nav-text">
+                Activities
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="news">
+              <img id="sidebar_icon_news" src="pictures/icons/news.png" alt="News" class="nav-icon">
+              <span class="nav-text">
+                News
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="events">
+              <img id="sidebar_icon_events" src="pictures/icons/events.png" alt="Events" class="nav-icon">
+              <span class="nav-text">
+                Events
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="store">
+              <img id="sidebar_icon_store" src="pictures/icons/store.png" alt="Store" class="nav-icon">
+              <span class="nav-text">
+                Store
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="wallet">
+              <img id="sidebar_icon_wallet" src="pictures/icons/wallet.png" alt="Wallet" class="nav-icon">
+              <span class="nav-text">
+                Wallet
+              </span>
+            </a>
+          </li>
+          <hr>
+          <li>
+            <a href="https://support.mfcweb.repl.co">
+              <img id="sidebar_icon_support" src="pictures/icons/support.png" alt="Support" class="nav-icon">
+              <span class="nav-text">
+                Support
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick="signOut()">
+              <img id="sidebar_icon_signout" src="pictures/icons/signout.png" alt="Support" class="nav-icon">
+              <span class="nav-text">
+                Sign out
+              </span>
+            </a>
+          </li>
+          <div class="sidebarLittleSize">
+            <hr>
+            <li>
+              <a onclick="sidebarLittleSize()">
+                <img id="sidebar_icon_close" src="pictures/icons/close.png" alt="Close" class="nav-icon">
+                <span class="nav-text">
+                  Close menu
+                </span>
+              </a>
+            </li>
+          </div>
+        </ul>
+      </nav>
+      <nav class="jumpto-nav">
+              <a href="#" id="sidebar-toggle">Jump to</a>
+      </nav>
+      <div id="notification-popup" class="notification">
+        <div class="notification-content">
+          <!-- Close button -->
+          <div id="close-button" class="close-button">
+            <img src="pictures/icons/close.png" alt="Close">
+          </div>
+          <!-- Notification text -->
+          <p></p>
+        </div>
+      </div>
+      <div class="settings-container">
+        <div class="sidebar">
+            <h1>Options</h1>
+            <ul>
+                <li class="selected"><a href="#profile">Profile</a></li>
+                <li><a href="#account">Account</a></li>
+                <li><a href="#general">General</a></li>
+            </ul>
+        </div>
+        <div class="form-container">
+          <section id="profile" class="section form">
+              <h2>Profile Settings</h2>
+              <div class="profile-container">
+                  <div class="profile-photo">
+                      <div id="profile-pic-container" class="signup-profile-pic-container">
+                          <label for="profile-pic-input">
+                              <img id="profile-pic" src="pictures/profile_pic_unknown.png" alt="Profile Picture">
+                          </label>
+                          <input type="file" id="profile-pic-input" accept="image/*" onchange="handleProfilePicChange()">
+                      </div>
+                      <div>
+                          <a onclick="handleProfilePicRemove()" id="remove-picture"></a>
+                      </div>
+                  </div>
+                  <div class="signup-form-line">
+                      <div class="settings-name">
+                          <label for="name" id="name-label">Name</label>
+                          <input type="text" id="name" placeholder="Name">
+                      </div>
+                      <div class="row">
+                          <div class="column">
+                              <label for="birthday" id="birthday-label">Birthday</label>
+                              <input type="date" id="birthday" class="birthday-date">
+                          </div>
+                          <div class="column">
+                              <label for="gender" id="gender-label">Gender</label>
+                              <select id="gender" class="gender-choose">
+                                  <option value="male">Male</option>
+                                  <option value="female">Female</option>
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="buttons">
+                  <button class="cancel-button cancel-profile-S">Cancel</button>
+                  <button class="save-button save-profile-S">Save Changes</button>
+              </div>
+          </section>
+          <section id="account" class="section form">
+    <h2>Account Settings</h2>
+
+    <!-- User ID -->
+            
+    <div class="BlackWhite">
+        <label>Your ID</label>
+        <div class="id-setting-content setting">
+            <p id="curantUserID">ID</p>
+            <a id="qr_codeContainer">
+              <img src="" alt="QR code" class="qr-code" id="qr_code">
+            </a>
+        </div>
+      <div id="QR-modal" class="modal">
+          <div class="modal-content">
+              <div id="close-button-qr" class="close-button-qr">
+                <img src="pictures/icons/close.png" alt="Close" onclick="document.getElementById('QR-modal').style.display = 'none';" id="closeQRmenu">
+              </div>
+              <p id="QRUserUsername">@username</p>
+              <p id="QRUserID">ID</p>
+              <img src="" alt="QR code" class="big-qr-code" id="big_qr_code">
+          </div>
+      </div>
+    </div>
+    
+    <!-- Change Username-->
+
+    <div class="settings_username settings-username BlackWhite">
+        <label>Your Username</label>
+        <div class="setting-content setting">
+            <p id="curantUserUsername">@username</p>
+            <button class="edit-b-username edit-button">Edit</button>
+        </div>
+    </div>
+            
+    <div class="settings-username account-form-line hidden" id="buttonV">
+        <div class="setting-content">
+          <div class="column-account">
+            <label>New Username</label>
+            <div class="input-container account-form-line-u">
+              <span class="at-symbol">@</span>
+              <input type="text" id="new_username" placeholder="New Username">
+            </div>
+          </div>
+        </div>
+      <p id="change_username_error_message" class="signup-error-message"></p>
+      <p id="change_username_done_message" class="signup-done-message"></p>
+      <div class="buttons">
+        <button class="cancel-button cancel-button-username">Cancel</button>
+        <button class="update-button" id="update_B_username">Update</button>
+      </div>
+    </div>
+    
+    <!-- Change Email -->
+    <div class="settings-email BlackWhite">
+        <label>Your Email</label>
+        <div class="setting-content setting">
+            <p id="curantUserEmail">Email</p>
+            <button class="edit-b-email edit-button">Edit</button>
+        </div>
+    </div>
+
+    <div class="settings-email hidden account-form-line" id="buttonV">
+        <div class="setting-content">
+          <div class="column-account">
+            <label>New Email</label>
+            <input type="email" id="new_email" placeholder="user@example.com">
+          </div>
+          <div class="column-account">
+            <label for="password-confirmation">Password Confirmation</label>
+            <input type="password" id="password_confirmation" placeholder="Password">
+          </div>
+        </div>
+      <p id="change_email_error_message" class="signup-error-message"></p><a href="forgot-password" class="signin-link" id="forget_P_B">Forget Password?</a>
+      <div class="buttons">
+        <button class="cancel-button cancel-button-email">Cancel</button>
+        <button class="update-button" id="update_B_email">Update</button>
+      </div>
+    </div>
+
+            
+    <!-- Change Password -->
+    <div class="settings-password BlackWhite">
+        <label>Your Password</label>
+        <div class="setting-content setting">
+            <p>**********</p>
+            <button class="edit-b-password edit-button">Edit</button>
+        </div>
+    </div>
+
+    <div class="settings-password hidden account-form-line" id="buttonV">
+        <div class="setting-content">
+          <div class="column-account">
+            <label>Current Password</label>
+            <input type="password" id="current_password" placeholder="Current Password">
+          </div>
+          <div class="column-account">
+            <label for="password-confirmation">New Password</label>
+            <input type="password" id="new_password" placeholder="New Password">
+          </div>
+        </div>
+      <p id="change_password_error_message" class="signup-error-message"></p><a href="forgot-password" class="signin-link" id="forget_P_B">Forget Password?</a>
+      <div class="buttons">
+        <button class="cancel-button cancel-button-password">Cancel</button>
+        <button class="update-button" id="update_B_password">Update</button>
+      </div>
+    </div>
+            
+    <!-- Change Password -->
+    <hr class="divider">
+
+    <!-- Danger Zone -->
+    <div class="dangerZ-form">
+      <h2>Danger Zone</h2>
+      <h3>Irreversible and destructive actions</h3>
+      <button class="delete-button" id="delete_B_account">Delete Account</button>
+      <button class="logout-button" onclick="signOut()">Sign out</button>
+    </div>
+    <div id="delete-modal" class="modal">
+        <div class="modal-content">
+            <p class="delete_ACC_Comfirm">Are you sure you want to delete your account?</p>
+            <label for="password-confirmation" >Password Confirmation</label>
+            <div class="column-account"> 
+              <input type="password" id="password_confirmation_D" placeholder="Password" class="confirm-password-delet-ACC">
+            </div>
+            <p id="delete_error_message" class="signup-error-message"></p>
+            <button class="delete-button" id="update_B_delete">Yes</button>
+            <button class="cancel-button" id="cancel_B_delete">Cancel</button>
+        </div>
+    </div>
+    <div id="delete-modalG" class="modal">
+        <div class="modal-content">
+            <p class="delete_ACC_Comfirm">Are you sure you want to delete your account?</p>
+            <p id="delete_error_messageG" class="signup-error-message"></p>
+            <button class="delete-button" id="update_B_deleteG">Yes</button>
+            <button class="cancel-button" id="cancel_B_deleteG">Cancel</button>
+        </div>
+    </div>
+</section>
+          
+          <section id="general" class="section form">
+            <h2>General Settings</h2>
+            <div class="setting">
+              <label>Theme Settings</label>
+              <select id="theme-select">
+                <option value="light_mode">Light Mode</option>
+                <option value="dark_mode">Dark Mode</option>
+                <option value="auto_theme">System default</option>
+              </select>
+            </div>
+            <div class="setting">
+              <label>Language Settings</label>
+              <select id="language_select">
+                <option value="en">English</option>
+                <option value="ar">عربي</option>
+                <!-- Add more language options here -->
+              </select>
+            </div>
+          
+            <div class="buttons">
+               <button class="cancel-button cancel-general-S">Cancel</button>
+               <button class="save-button save-general-S">Save Changes</button>
+            </div>
+          </section>
+      </div>
+    </div>
+      <nav class="mobile-bottom-nav">
+        <li>
+          <a onclick="sidebarLittleSize()">
+            <img id="mobilebar_icon_menu" src="pictures/icons/menu.png" alt="Menu" class="nav-icon">
+          </a>
+
+        </li>
+        <li>
+          <a href="notifications">
+            <img id="mobilebar_icon_notifications" src="pictures/icons/notifications.png" alt="Notifications" class="nav-icon">
+            <span id="notification_dotM" class="notification-dot hidden"></span>
+          </a>
+        </li>
+        <li>
+          <a href="search">
+            <img id="mobilebar_icon_search" src="pictures/icons/search.png" alt="Search" class="nav-icon">
+          </a>
+
+        </li>
+        <li>
+          <a href="home">
+            <img id="mobilebar_icon_home" src="pictures/icons/home.png" alt="Home" class="nav-icon">
+          </a>
+          </a>
+        </li>
+      </nav>
+    </div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/signedin_pages.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>

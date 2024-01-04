@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الفعاليات</title>
+    <link id="theme-link" rel="stylesheet" href="css/ar-hidden.css">
+    <link rel="icon" href="pictures/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="pictures/apple-touch-icon.png">
+</head>
+<body>
+    <header>
+        <h1 class="header-title" id="header_title"></h1>
+        <nav class="nav-main">
+            <div class="left-section">
+                <div class="coins-container">
+                    <img src="pictures/coins_icon.png" alt="أيقونة النقود" class="coins-icon" id="coins-icon">
+                    <span class="coins-text" id="CoinsText">النقود: --</span>
+                </div>
+                <div class="profile-picture-container">
+                  <a href="ar-profile">
+                    <img src="pictures/profile_pic_unknown.png" alt="صورة الملف الشخصي" class="profile-picture" id="profile-picture" href="profile">
+                  </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="page-container">
+      <nav class="main-menu nav-sider">
+        <ul>
+          <li>
+            <a href="ar-home">
+              <img id="sidebar_icon_home" src="pictures/icons/home.png" alt="الصفحة الرئيسية" class="nav-icon">
+              <span class="nav-text">
+                الصفحة الرئيسية
+              </span>
+            </a>
+
+          </li>
+          <li>
+            <a href="ar-search">
+              <img id="sidebar_icon_search" src="pictures/icons/search.png" alt="بحث" class="nav-icon">
+              <span class="nav-text">
+                بحث
+              </span>
+            </a>
+
+          </li>
+          <li class "has-subnav">
+            <a href="ar-profile">
+              <img id="sidebar_icon_profile" src="pictures/icons/person.png" alt="الملف الشخصي" class="nav-icon">
+              <span class="nav-text">
+                الملف الشخصي
+              </span>
+            </a>
+
+          </li>
+          <li>
+            <a href="ar-settings">
+              <img id="sidebar_icon_settings" src="pictures/icons/settings.png" alt="الإعدادات" class="nav-icon">
+              <span class="nav-text">
+                الإعدادات
+              </span>
+            </a>
+
+          </li>
+          <hr>
+          <li>
+            <a href="ar-notifications">
+              <img id="sidebar_icon_notifications" src="pictures/icons/notifications.png" alt="الإشعارات" class="nav-icon">
+              <span id="notification_dotS" class="notification-dot hidden"></span>
+              <span class="nav-text">
+                الإشعارات
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="ar-activities">
+              <img id="sidebar_icon_activities" src="pictures/icons/activities.png" alt="النشاطات" class="nav-icon">
+              <span class="nav-text">
+                النشاطات
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="ar-news">
+              <img id="sidebar_icon_news" src="pictures/icons/news.png" alt="الأخبار" class="nav-icon">
+              <span class="nav-text">
+                الأخبار
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="ar-events">
+              <img id="sidebar_icon_events" src="pictures/icons/events.png" alt="الفعاليات" class="nav-icon">
+              <span class="nav-text">
+                الفعاليات
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="ar-store">
+              <img id="sidebar_icon_store" src="pictures/icons/store.png" alt="المتجر" class="nav-icon">
+              <span class="nav-text">
+                المتجر
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="ar-wallet">
+              <img id="sidebar_icon_wallet" src="pictures/icons/wallet.png" alt="المحفظة" class="nav-icon">
+              <span class="nav-text">
+                المحفظة
+              </span>
+            </a>
+          </li>
+          <hr>
+          <li>
+            <a href="https://support.mfcweb.repl.co">
+              <img id="sidebar_icon_support" src="pictures/icons/support.png" alt="الدعم" class="nav-icon">
+              <span class="nav-text">
+                الدعم
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick="signOut()">
+              <img id="sidebar_icon_signout" src="pictures/icons/signout.png" alt="تسجيل الخروج" class="nav-icon">
+              <span class="nav-text">
+                تسجيل الخروج
+              </span>
+            </a>
+          </li>
+          <div class="sidebarLittleSize">
+            <hr>
+            <li>
+              <a onclick="sidebarLittleSize()">
+                <img id="sidebar_icon_close" src="pictures/icons/close.png" alt="Close" class="nav-icon">
+                <span class="nav-text">
+                  إغلاق القائمة
+                </span>
+                </span>
+              </a>
+            </li>
+          </div>
+        </ul>
+      </nav>
+      <main>
+        <div class="form">
+                 <h1 class="form-title">قريباً</h1>
+        </div>
+      </main>
+      <nav class="mobile-bottom-nav">
+        <li>
+          <a onclick="sidebarLittleSize()">
+            <img id="mobilebar_icon_menu" src="pictures/icons/menu.png" alt="القائمة" class="nav-icon">
+          </a>
+        </li>
+        <li>
+          <a href="ar-notifications">
+            <img id="mobilebar_icon_notifications" src="pictures/icons/notifications.png" alt="الإشعارات" class="nav-icon">
+            <span id="notification_dotM" class="notification-dot hidden"></span>
+          </a>
+        </li>
+        <li>
+          <a href="ar-search">
+            <img id="mobilebar_icon_search" src="pictures/icons/search.png" alt="البحث" class="nav-icon">
+          </a>
+        </li>
+        <li>
+          <a href="ar-home">
+            <img id="mobilebar_icon_home" src="pictures/icons/home.png" alt="الصفحة الرئيسية" class="nav-icon">
+          </a>
+        </li>
+      </nav>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/ar-signedin_pages.js"></script>
+    <script src="js/ar-events.js"></script>
+</body>
+</html>

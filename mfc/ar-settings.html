@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإعدادات</title>
+    <link id="theme-link" rel="stylesheet" href="css/ar-hidden.css">
+    <link rel="icon" href="pictures/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="pictures/apple-touch-icon.png">
+</head>
+<body>
+    <header>
+        <h1 class="header-title" id="header_title"></h1>
+        <nav class="nav-main">
+            <div class="left-section">
+                <div class="coins-container">
+                    <img src="pictures/coins_icon.png" alt="أيقونة النقود" class="coins-icon" id="coins-icon">
+                    <span class="coins-text" id="CoinsText">النقود: --</span>
+                </div>
+                <div class="profile-picture-container">
+                  <a href="ar-profile">
+                    <img src="pictures/profile_pic_unknown.png" alt="صورة الملف الشخصي" class="profile-picture" id="profile-picture" href="profile">
+                  </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="page-container">
+      <nav class="main-menu nav-sider">
+        <ul>
+          <li>
+            <a href="ar-home">
+              <img id="sidebar_icon_home" src="pictures/icons/home.png" alt="الصفحة الرئيسية" class="nav-icon">
+              <span class="nav-text">
+                الصفحة الرئيسية
+              </span>
+            </a>
+
+          </li>
+          <li>
+            <a href="ar-search">
+              <img id="sidebar_icon_search" src="pictures/icons/search.png" alt="بحث" class="nav-icon">
+              <span class="nav-text">
+                بحث
+              </span>
+            </a>
+
+          </li>
+          <li class "has-subnav">
+            <a href="ar-profile">
+              <img id="sidebar_icon_profile" src="pictures/icons/person.png" alt="الملف الشخصي" class="nav-icon">
+              <span class="nav-text">
+                الملف الشخصي
+              </span>
+            </a>
+
+          </li>
+          <li>
+            <a href="ar-settings">
+              <img id="sidebar_icon_settings" src="pictures/icons/settings.png" alt="الإعدادات" class="nav-icon">
+              <span class="nav-text">
+                الإعدادات
+              </span>
+            </a>
+
+          </li>
+          <hr>
+          <li>
+            <a href="ar-notifications">
+              <img id="sidebar_icon_notifications" src="pictures/icons/notifications.png" alt="الإشعارات" class="nav-icon">
+              <span id="notification_dotS" class="notification-dot hidden"></span>
+              <span class="nav-text">
+                الإشعارات
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="ar-activities">
+              <img id="sidebar_icon_activities" src="pictures/icons/activities.png" alt="النشاطات" class="nav-icon">
+              <span class="nav-text">
+                النشاطات
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="ar-news">
+              <img id="sidebar_icon_news" src="pictures/icons/news.png" alt="الأخبار" class="nav-icon">
+              <span class="nav-text">
+                الأخبار
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="ar-events">
+              <img id="sidebar_icon_events" src="pictures/icons/events.png" alt="الفعاليات" class="nav-icon">
+              <span class="nav-text">
+                الفعاليات
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="ar-store">
+              <img id="sidebar_icon_store" src="pictures/icons/store.png" alt="المتجر" class="nav-icon">
+              <span class="nav-text">
+                المتجر
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="ar-wallet">
+              <img id="sidebar_icon_wallet" src="pictures/icons/wallet.png" alt="المحفظة" class="nav-icon">
+              <span class="nav-text">
+                المحفظة
+              </span>
+            </a>
+          </li>
+          <hr>
+          <li>
+            <a href="https://support.mfcweb.repl.co">
+              <img id="sidebar_icon_support" src="pictures/icons/support.png" alt="الدعم" class="nav-icon">
+              <span class="nav-text">
+                الدعم
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick="signOut()">
+              <img id="sidebar_icon_signout" src="pictures/icons/signout.png" alt="تسجيل الخروج" class="nav-icon">
+              <span class="nav-text">
+                تسجيل الخروج
+              </span>
+            </a>
+          </li>
+          <div class="sidebarLittleSize">
+            <hr>
+            <li>
+              <a onclick="sidebarLittleSize()">
+                <img id="sidebar_icon_close" src="pictures/icons/close.png" alt="Close" class="nav-icon">
+                <span class="nav-text">
+                  إغلاق القائمة
+                </span>
+                </span>
+              </a>
+            </li>
+          </div>
+        </ul>
+      </nav>
+      <nav class="jumpto-nav">
+              <a href="#" id="sidebar-toggle">اذهب إلى</a>
+      </nav>
+      <div id="notification-popup" class="notification">
+        <div class="notification-content">
+          <!-- Close button -->
+          <div id="close-button" class="close-button">
+            <img src="pictures/icons/close.png" alt="Close">
+          </div>
+          <!-- Notification text -->
+          <p></p>
+        </div>
+      </div>
+      <div class="settings-container">
+          <div class="sidebar">
+              <h1>الخيارات</h1>
+              <ul>
+                  <li class="selected"><a href="#profile">الملف الشخصي</a></li>
+                  <li><a href="#account">الحساب</a></li>
+                  <li><a href="#general">عامة</a></li>
+              </ul>
+          </div>
+          <div class="form-container">
+            <section id="profile" class="section form">
+                <h2>إعدادات الملف الشخصي</h2>
+                <div class="profile-container">
+                    <div class="profile-photo">
+                        <div id="profile-pic-container" class="signup-profile-pic-container">
+                            <label for="profile-pic-input">
+                                <img id="profile-pic" src="pictures/profile_pic_unknown.png" alt="صورة الملف الشخصي">
+                            </label>
+                            <input type="file" id="profile-pic-input" accept="image/*" onchange="handleProfilePicChange()">
+                        </div>
+                        <div>
+                            <a onclick="handleProfilePicRemove()" id="remove-picture"></a>
+                        </div>
+                    </div>
+                    <div class="signup-form-line">
+                        <div class="settings-name">
+                            <label for="name" id="name-label">الاسم</label>
+                            <input type="text" id="name" placeholder="الاسم">
+                        </div>
+                        <div class="row">
+                            <div class="column">
+                                <label for="birthday" id="birthday-label">تاريخ الميلاد</label>
+                                <input type="date" id="birthday" class="birthday-date">
+                            </div>
+                            <div class="column">
+                                <label for="gender" id="gender-label">النوع</label>
+                                <select id="gender" class="gender-choose">
+                                    <option value="male">ذكر</option>
+                                    <option value="female">أنثى</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="cancel-button cancel-profile-S">إلغاء</button>
+                    <button class="save-button save-profile-S">حفظ التغييرات</button>
+                </div>
+            </section>
+            <section id="account" class="section form">
+              <h2>إعدادات الحساب</h2>
+
+              <!-- رقم المستخدم -->
+
+              <div class="BlackWhite">
+        <label>رقم المستخدم</label>
+        <div class="id-setting-content setting">
+            <p id="curantUserID">ID</p>
+            <a id="qr_codeContainer">
+              <img src="" alt="QR code" class="qr-code" id="qr_code">
+            </a>
+        </div>
+      <div id="QR-modal" class="modal">
+          <div class="modal-content">
+              <div id="close-button-qr" class="close-button-qr">
+                <img src="pictures/icons/close.png" alt="Close" onclick="document.getElementById('QR-modal').style.display = 'none';" id="closeQRmenu">
+              </div>
+              <p id="QRUserUsername" dir="ltr">@username</p>
+              <p id="QRUserID">ID</p>
+              <img src="" alt="QR code" class="big-qr-code" id="big_qr_code">
+          </div>
+      </div>
+              </div>
+
+
+              <!-- تغيير اسم المستخدم-->
+
+              <div class="settings_username settings-username BlackWhite">
+                  <label>اسم المستخدم</label>
+                  <div class="setting-content setting">
+                      <p id="curantUserUsername" dir="ltr">@username</p>
+                      <button class="edit-b-username edit-button">تعديل</button>
+                  </div>
+              </div>
+
+              <div class="settings-username account-form-line hidden" id="buttonV">
+                  <div class="setting-content">
+                      <div class="column-account">
+                          <label>اسم مستخدم جديد</label>
+                          <div class="input-container account-form-line-u">
+                              <span class="at-symbol">@</span>
+                              <input type="text" id="new_username" placeholder="اسم مستخدم جديد">
+                          </div>
+                      </div>
+                  </div>
+                  <p id="change_username_error_message" class="signup-error-message"></p>
+                  <p id="change_username_done_message" class="signup-done-message"></p>
+                  <div class="buttons">
+                      <button class="cancel-button cancel-button-username">إلغاء</button>
+                      <button class="update-button" id="update_B_username">تحديث</button>
+                  </div>
+              </div>
+
+
+              <!-- تغيير البريد الإلكتروني -->
+              <div class="settings-email BlackWhite">
+                  <label>بريدك الإلكتروني</label>
+                  <div class="setting-content setting">
+                      <p id="curantUserEmail">البريد الإلكتروني</p>
+                      <button class="edit-b-email edit-button">تعديل</button>
+                  </div>
+              </div>
+
+              <div class="settings-email hidden account-form-line" id="buttonV">
+                  <div class="setting-content">
+                    <div class="column-account">
+                      <label>بريد إلكتروني جديد</label>
+                      <input type="email" id="new_email" placeholder="user@example.com">
+                    </div>
+                    <div class="column-account">
+                      <label for="password-confirmation">تأكيد كلمة المرور</label>
+                      <input type="password" id="password_confirmation" placeholder="كلمة المرور">
+                    </div>
+                  </div>
+                <p id="change_email_error_message" class="signup-error-message"></p><a href="ar-forgot-password" class="signin-link" id="forget_P_B">نسيت كلمة المرور؟</a>
+                <div class="buttons">
+                  <button class="cancel-button cancel-button-email">إلغاء</button>
+                  <button class="update-button" id="update_B_email">تحديث</button>
+                </div>
+              </div>
+
+              <!-- تغيير كلمة المرور -->
+              <div class="settings-password BlackWhite">
+                  <label>كلمة المرور</label>
+                  <div class="setting-content setting">
+                      <p>**********</p>
+                      <button class="edit-b-password edit-button">تعديل</button>
+                  </div>
+              </div>
+
+              <div class="settings-password hidden account-form-line" id="buttonV">
+                  <div class="setting-content">
+                    <div class="column-account">
+                      <label>كلمة المرور الحالية</label>
+                      <input type="password" id="current_password" placeholder="كلمة المرور الحالية">
+                    </div>
+                    <div class="column-account">
+                      <label for="password-confirmation">كلمة المرور الجديدة</label>
+                      <input type="password" id="new_password" placeholder="كلمة المرور الجديدة">
+                    </div>
+                  </div>
+                <p id="change_password_error_message" class="signup-error-message"></p><a href="ar-forgot-password" class="signin-link" id="forget_P_B">نسيت كلمة المرور؟</a>
+                <div class="buttons">
+                  <button class="cancel-button cancel-button-password">إلغاء</button>
+                  <button class="update-button" id="update_B_password">تحديث</button>
+                </div>
+              </div>
+
+              <!-- تغيير كلمة المرور -->
+              <hr class="divider">
+
+              <!-- منطقة الخطر -->
+              <div class="dangerZ-form">
+              <h2>منطقة الخطر</h2>
+              <h3>إجراءات لا يمكن عكسها وتدميرية</h3>
+              <button class="delete-button" id="delete_B_account">حذف الحساب</button>
+              <button class="logout-button" onclick="signOut()">تسجيل الخروج</button>
+          </div>
+
+          <div id="delete-modal" class="modal">
+              <div class="modal-content">
+                  <p class="delete_ACC_Comfirm">هل أنت متأكد أنك تريد حذف حسابك؟</p>
+                  <label for="password-confirmation">تأكيد كلمة المرور</label>
+                  <div class="column-account"> 
+                      <input type="password" id="password_confirmation_D" placeholder="كلمة المرور" class="confirm-password-delet-ACC">
+                  </div>
+                  <p id="delete_error_message" class="signup-error-message"></p>
+                  <button class="delete-button" id="update_B_delete">نعم</button>
+                  <button class="cancel-button" id="cancel_B_delete">إلغاء</button>
+              </div>
+          </div>
+
+          <div id="delete-modalG" class="modal">
+              <div class="modal-content">
+                  <p class="delete_ACC_Comfirm">هل أنت متأكد أنك تريد حذف حسابك؟</p>
+                  <p id="delete_error_messageG" class="signup-error-message"></p>
+                  <button class="delete-button" id="update_B_deleteG">نعم</button>
+                  <button class="cancel-button" id="cancel_B_deleteG">إلغاء</button>
+              </div>
+          </div>
+            </section>
+            <section id="general" class="section form">
+              <h2>إعدادات عامة</h2>
+              <div class="setting">
+                <label>إعدادات المظهر</label>
+                <select id="theme-select">
+                  <option value="light_mode">وضع النهار</option>
+                  <option value="dark_mode">وضع الليل</option>
+                  <option value="auto_theme">الأعداد الافتراضي للنظام</option>
+                </select>
+              </div>
+              <div class="setting">
+                <label>إعدادات اللغة</label>
+                <select id="language_select">
+                  <option value="en">English</option>
+                  <option value="ar">عربي</option>
+                  <!-- إضافة المزيد من خيارات اللغة هنا -->
+                </select>
+              </div>
+              <div class="buttons">
+                 <button class="cancel-button cancel-S">إلغاء</button>
+                 <button class="save-button save-general-S">حفظ التغييرات</button>
+              </div>
+            </section>
+        </div>
+      </div>
+      <nav class="mobile-bottom-nav">
+        <li>
+          <a onclick="sidebarLittleSize()">
+            <img id="mobilebar_icon_menu" src="pictures/icons/menu.png" alt="القائمة" class="nav-icon">
+          </a>
+        </li>
+        <li>
+          <a href="ar-notifications">
+            <img id="mobilebar_icon_notifications" src="pictures/icons/notifications.png" alt="الإشعارات" class="nav-icon">
+            <span id="notification_dotM" class="notification-dot hidden"></span>
+          </a>
+        </li>
+        <li>
+          <a href="ar-search">
+            <img id="mobilebar_icon_search" src="pictures/icons/search.png" alt="البحث" class="nav-icon">
+          </a>
+        </li>
+        <li>
+          <a href="ar-home">
+            <img id="mobilebar_icon_home" src="pictures/icons/home.png" alt="الصفحة الرئيسية" class="nav-icon">
+          </a>
+        </li>
+      </nav>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/ar-signedin_pages.js"></script>
+    <script src="js/ar-settings.js"></script>
+</body>
+</html>

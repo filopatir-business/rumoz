@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Your Profile</title>
+  <link id="theme-link" rel="stylesheet" href="css/signin.css">
+  <link rel="icon" href="pictures/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="pictures/apple-touch-icon.png">
+</head>
+
+<body>
+  <header>
+    <h1>Complete Your Profile</h1>
+  </header>
+
+  <main>
+    <div class="scroll-form">
+      <div id="signup-form" class="form complete-P-form">
+        <span id="your_email" class="your-email"></span>
+        <div id="profile-pic-container" class="signup-profile-pic-container">
+          <label for="profile-pic-input">
+            <img id="profile-pic" src="pictures/profile_pic_unknown.png" alt="Profile Picture">
+          </label>
+          <input type="file" id="profile-pic-input" accept="image/*" onchange="handleProfilePicChange()">
+        </div>
+        <div>
+          <a onclick="handleProfilePicRemove()" id="remove-picture"></a>
+        </div>
+        <div class="signup-form-line">
+          <label for="signup-name" id="name-label">Name</label>
+          <input type="text" id="signup-name" placeholder="Name">
+        </div>
+        <div class="signup-form-line">
+          <label for="signup-username" id="username-label">Username</label>
+          <div class="input-container account-form-line-u">
+            <span class="at-symbol">@</span>
+            <input type="text" id="new_username" placeholder="Username">
+          </div>
+          <div class="user-errors">
+            <p id="change_username_error_message" class="signup-error-message"></p>
+            <p id="change_username_done_message" class="signup-done-message"></p>
+          </div>
+        </div>
+        <div class="signup-form-line">
+          <label for="signup-gender" id="gender-label">Gender</label>
+          <select id="signup-gender">
+            <option value="click_to_choose">Click to Choose</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="signup-form-line">
+          <label for="signup-birthday" id="birthday-label">Birthday</label>
+          <input type="date" id="signup-birthday">
+        </div>
+        <div class="signup-form-line">
+          <label for="signup-position" id="position-label">Are you a...?</label>
+          <select id="signup-position">
+            <option value="click_to_choose">Click to Choose</option>
+            <option value="0">Student</option>
+            <option value="1">Servant</option>
+          </select>
+        </div>
+        <p id="signup-error-message" class="signup-error-message"></p>
+        <button id="google-signup-button" onclick="completeProfileSignUp()">Complete Sign Up</button>
+        <div class="signup-link">
+          Want to change the account? <a href="#" onclick="signOut()" class="signin-link">Sign out</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <input type="hidden" id="google-signup-email" name="google-signup-email" value="">
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/complete-profile-validation.js"></script>
+  <script src="js/complete-profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <link id="theme-link" rel="stylesheet" href="css/signin.css">
+  <link rel="icon" href="pictures/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="pictures/apple-touch-icon.png">
+</head>
+
+<body>
+  <header>
+    <h1>Sign In</h1>
+  </header>
+
+  <main>
+    <div class="scroll-form">
+      <div id="signup-form" class="form">
+      <h1>Welcome Back...</h1>
+      <div class="signup-form-line">
+        <label for="signup-email" id="email-label">Email</label>
+        <input type="email" id="signup-email" placeholder="Email">
+      </div>
+      <div class="signup-form-line">
+        <label for="signup-password" id="password-label">Password</label>
+        <input type="password" id="signup-password" placeholder="Password">
+      </div>
+      <div class="signup-link">
+        Don't have an accounnt? <a href="signup" class="signin-link">Sign up</a>
+      </div>
+      <p id="signup-error-message" class="signup-error-message"></p><a href="forgot-password" class="signin-link signup-link" id="forget_P_B">Forget Password?</a>
+      <button id="signup-button" onclick="signIn()">Sign In</button>
+      <p class="or-text">or</p>
+      <div class="signup-button-container">
+        <img id="google-signin-button" class="google-signin-image" src="pictures/GoogleSignUp.png" alt="Sign in with Google">
+      </div>
+    </div>
+    </div>
+  </main>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/language_change.js"></script>
+  <script src="js/signin_pages.js"></script>
+</body>
+</html>

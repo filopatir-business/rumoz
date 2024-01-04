@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خطأ</title>
+    <link rel="stylesheet" href="css/signin.css">
+    <link rel="icon" href="pictures/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="pictures/apple-touch-icon.png">
+</head>
+<body>
+    <header>
+        <h1>خطأ</h1>
+    </header>
+    
+    <main>
+      <a id=errorMessage></a>
+    </main>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const error = urlParams.get("error");
+      errorMessage.textContent = error
+    </script>
+</body>
+</html>
